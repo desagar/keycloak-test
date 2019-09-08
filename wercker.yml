@@ -27,15 +27,21 @@ build:
 
 deploy-keycloak-container:
   box:
-    id: iad.ocir.io/odx-pipelines/deva/keycloakroot 
-    username: ${DOCKER_USERNAME}
-    password: ${DOCKER_PASSWORD}
-    registry: https://iad.ocir.io/v2
-    cmd: /bin/bash
+     id: debian
+     cmd: /bin/bash
     env:
       DB_VENDOR: mysql
       KEYCLOAK_USER: ${KEYCLOAK_USER}
       KEYCLOAK_PASSWORD: ${KEYCLOAK_PASSWORD}
+#    id: iad.ocir.io/odx-pipelines/deva/keycloakroot 
+#    username: ${DOCKER_USERNAME}
+#    password: ${DOCKER_PASSWORD}
+#    registry: https://iad.ocir.io/v2
+#    cmd: /bin/bash
+#    env:
+#      DB_VENDOR: mysql
+#      KEYCLOAK_USER: ${KEYCLOAK_USER}
+#      KEYCLOAK_PASSWORD: ${KEYCLOAK_PASSWORD}
 
   steps:
     - script:
@@ -47,10 +53,10 @@ deploy-keycloak-container:
     - internal/docker-push:
       username: ${DOCKER_USERNAME}
       password: ${DOCKER_PASSWORD}
-      repository: iad.ocir.io/odx-pipelines/deva/keycloak-test
+      repository: iad.ocir.io/odx-pipelines/deva/envvar-wercker-test
       tag: latest, ${WERCKER_GIT_COMMIT}
       ports: 8085, 9100
-      entrypoint: "sh /keycloak.sh"
+      entrypoint: "/bin/bash"
       user: 1000
       registry: https://iad.ocir.io/v2
       disable-sync: true
