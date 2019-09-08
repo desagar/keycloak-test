@@ -29,10 +29,10 @@ deploy-keycloak-container:
   box:
      id: debian
      cmd: /bin/bash
-    env:
-      DB_VENDOR: mysql
-      KEYCLOAK_USER: ${KEYCLOAK_USER}
-      KEYCLOAK_PASSWORD: ${KEYCLOAK_PASSWORD}
+     env:
+       DB_VENDOR: mysql
+       KEYCLOAK_USER: ${KEYCLOAK_USER}
+       KEYCLOAK_PASSWORD: ${KEYCLOAK_PASSWORD}
 #    id: iad.ocir.io/odx-pipelines/deva/keycloakroot 
 #    username: ${DOCKER_USERNAME}
 #    password: ${DOCKER_PASSWORD}
