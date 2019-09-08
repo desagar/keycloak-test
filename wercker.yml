@@ -27,7 +27,10 @@ build:
 
 deploy-keycloak-container:
   box:
-    id: jboss/keycloak
+    id: iad.ocir.io/odx-pipelines/deva/keycloakroot 
+    username: ${DOCKER_USERNAME}
+    password: ${DOCKER_PASSWORD}
+    registry: https://iad.ocir.io/v2
     cmd: /bin/bash
     env:
       DB_VENDOR: mysql
