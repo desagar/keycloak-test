@@ -49,6 +49,7 @@ deploy-keycloak-container:
       code: |
         echo "just doing something"
         export MANUALLY_ENV=yeah
+        echo "just manually: ${MANUALLY_ENV}"
         #cp sso-spi/sso-spi.jar /opt/jboss/keycloak/standalone/deployments/
         rm -rf /pipeline/cache/*
     - internal/docker-push:
