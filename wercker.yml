@@ -62,4 +62,4 @@ deploy-keycloak-container:
       entrypoint: "/bin/bash"
       user: 1000
       registry: https://iad.ocir.io/v2
-      disable-sync: false
+      disable-sync: true
