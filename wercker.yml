@@ -5,8 +5,8 @@
 box: debian
 # You can also use services such as databases. Read more on our dev center:
 # https://devcenter.wercker.com/administration/services/
-# services:
-    # - postgres
+ services:
+    - postgres
     # https://devcenter.wercker.com/administration/services/examples/postgresql/
 
     # - mongo
